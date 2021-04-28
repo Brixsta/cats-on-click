@@ -1,5 +1,3 @@
-
-  
 const $container = $('.container');
 const $catHeading = $('.catHeading');
 const $catCanvas = $('.catCanvas');
@@ -22,13 +20,10 @@ let catEnergyLevel = [];
 let catGrooming = [];
 let catHealthIssues = [];
 let catIntelligence = [];
-
-
-
 let indexOfCat;
 let results;
 
-// RANDOM CAT PHOTO GENERATION
+// Random cat photo generation
 $randomCatBtn.click( function(){
 
     $.get(`https://api.thecatapi.com/v1/images/search?limit=5&page=${randomPage}&order=Desc`, (data) => {
@@ -89,11 +84,17 @@ $breedDescription.addEventListener('click', function(){
 
 
 $descriptionBtn.click(function(){
-
+    
     if($breedDescription.value === 'Description By Breed') {
         alert('Please select a cat breed you wish to learn about.');
         return;
     }
+
+
+    // Removing prior elements from a previous search
+    $( "p" ).remove();
+    $(".catThumbnail").remove();
+    $(".descriptionHeader").remove();
 
     // Index used for almost every cat array
     indexOfCat = catBreedArray.indexOf($breedDescription.value);
@@ -135,5 +136,3 @@ $descriptionBtn.click(function(){
     $newIntelligence.hide().fadeIn();
     $newIntelligence.appendTo($container);
 });
-
-

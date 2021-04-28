@@ -24,6 +24,7 @@ body {
     border:solid 1px black;
     margin-bottom:20px;
     box-shadow:0px 0px 5px rgba(0,0,0,.7);
+    border-radius:5px;
 }
 
 .breedDescription {
@@ -47,6 +48,15 @@ body {
     padding:0px 20px;
     margin:8px 0px;
 }
+
+.catDescription {
+    text-indent:10px;
+}
+
+ .catIntelligence {
+     margin-bottom:20px;
+ }
+
 
 
 
