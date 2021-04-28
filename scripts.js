@@ -6,6 +6,7 @@ const $randomCatBtn = $('.randomCatBtn');
 const $descriptionBtn = $('.descriptionBtn');
 const $breedDescription = $('.breedDescription')[0];
 const randomPage = Math.floor(Math.random()*3000);
+
 let catBreedArray = [];
 let catBreedIdArray = [];
 let catThumbnail = [];
@@ -42,7 +43,7 @@ $breedDescription.addEventListener('click', function(){
         $.get(`https://api.thecatapi.com/v1/breeds`, (data) => {
         results = data;
          
-        // Taking values from the API and transferring them into arrays
+        // Transfer values from  API and transfer to arrays
         for(index in results) {
             catBreedArray.push(results[index].name);
             catBreedIdArray.push(results[index].id)
@@ -99,40 +100,24 @@ $descriptionBtn.click(function(){
     // Index used for almost every cat array
     indexOfCat = catBreedArray.indexOf($breedDescription.value);
 
+    // Elements created for Cat description button
     let $newDescriptionHeader = $('<h2></h2>', {class:"descriptionHeader", text:catBreedArray[indexOfCat]});
-    $newDescriptionHeader.hide().fadeIn();
-    $newDescriptionHeader.appendTo($container);
+    // $newDescriptionHeader.hide().fadeIn();
     let $newThumbnail = $('<img>', {class:"catThumbnail", height:'100px', width:'140px', src: catThumbnailImg[indexOfCat]});
-    $newThumbnail.hide().fadeIn();
-    $newThumbnail.appendTo($container);
     let $newDescription = $('<p></p>', {text: catBreedDescriptions[indexOfCat], class:'catDescription'});
-    $newDescription.hide().fadeIn(); 
-    $newDescription.appendTo($container);
     let $newTemperament = $('<p></p>', {text:'Temperament: ' + catTemperament[indexOfCat], class:'catTemperament'});
-    $newTemperament.hide().fadeIn();
-    $newTemperament.appendTo($container);
     let $newAdaptability = $('<p></p>', {text:'Adaptability: ' + catAdaptability[indexOfCat], class:'catAdaptability'});
-    $newAdaptability.hide().fadeIn();
-    $newAdaptability.appendTo($container);
     let $newAffection = $('<p></p>', {text:'Affection: ' + catAffection[indexOfCat], class:'catAffection'});
-    $newAffection.hide().fadeIn();
-    $newAffection.appendTo($container);
     let $newChildFriendly = $('<p></p>', {text:'Child Friendly: ' + catChildFriendly[indexOfCat], class:'catChildFriendly'});
-    $newChildFriendly.hide().fadeIn();
-    $newChildFriendly.appendTo($container);
     let $newDogFriendly = $('<p></p>', {text:'Dog Friendly: ' + catDogFriendly[indexOfCat], class:'catDogFriendly'});
-    $newDogFriendly.hide().fadeIn();
-    $newDogFriendly.appendTo($container);
     let $newEnergyLevel = $('<p></p>', {text:'Energy Level: ' + catEnergyLevel[indexOfCat], class:'catEnergyLevel'});
-    $newEnergyLevel.hide().fadeIn();
-    $newEnergyLevel.appendTo($container);
     let $newGrooming = $('<p></p>', {text:'Grooming: ' + catGrooming[indexOfCat], class:'catGrooming'});
-    $newGrooming.hide().fadeIn();
-    $newGrooming.appendTo($container);
     let $newHealthIssues = $('<p></p>', {text:'Health Issues: ' + catHealthIssues[indexOfCat], class:'catHealthIssues'});
-    $newHealthIssues.hide().fadeIn();
-    $newHealthIssues.appendTo($container);
     let $newIntelligence = $('<p></p>', {text:'Intelligence: ' + catIntelligence[indexOfCat], class:'catIntelligence'});
-    $newIntelligence.hide().fadeIn();
-    $newIntelligence.appendTo($container);
+
+    // Append all the elements to $container
+    $container.append($newDescriptionHeader.hide().fadeIn(), $newThumbnail.hide().fadeIn(), $newDescription.hide().fadeIn(), 
+    $newTemperament.hide().fadeIn(), $newAdaptability.hide().fadeIn(), $newAffection.hide().fadeIn(), $newChildFriendly.hide().fadeIn(), 
+    $newDogFriendly.hide().fadeIn(), $newEnergyLevel.hide().fadeIn(), $newGrooming.hide().fadeIn(), $newHealthIssues.hide().fadeIn(), 
+    $newIntelligence.hide().fadeIn());
 });
