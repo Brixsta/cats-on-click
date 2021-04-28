@@ -24,9 +24,31 @@ let catIntelligence = [];
 let indexOfCat;
 let results;
 
+// Generate random sounds
+function randomSound () {
+    const sound1 = new Audio('purr.mp3');
+    const sound2 = new Audio('snappy-meow.wav');
+    const sound3 = new Audio('tiny-meow.wav');
+    const sound4 = new Audio('standard-meow.mp3');
+
+    let randomNumber = Math.floor(Math.random()*4);
+
+    switch(randomNumber) {
+        case 0:
+            return sound1.play();
+        case 1:
+            return sound2.play();
+        case 2:
+            return sound3.play();
+        case 3:
+            return sound4.play();
+    }
+    console.log(randomNumber);
+}
+
 // Random cat photo generation
 $randomCatBtn.click( function(){
-
+    randomSound();
     $.get(`https://api.thecatapi.com/v1/images/search?limit=5&page=${randomPage}&order=Desc`, (data) => {
         results = data;
         let catImgArray = [];
@@ -40,6 +62,7 @@ $randomCatBtn.click( function(){
 });
 
 $breedDescription.addEventListener('click', function(){
+        
         $.get(`https://api.thecatapi.com/v1/breeds`, (data) => {
         results = data;
          
@@ -89,6 +112,8 @@ $descriptionBtn.click(function(){
         alert('Please select a cat breed you wish to learn about.');
         return;
     }
+
+    randomSound();
 
     // Removing prior elements from a previous search
     $( "p" ).remove();

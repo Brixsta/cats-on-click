@@ -1,5 +1,5 @@
 body {
-    
+    background-image:url('bg.jpg');
 }
 
 
@@ -12,11 +12,20 @@ body {
     flex-direction:column;
     margin:auto;
     box-shadow:5px 5px 10px rgba(0,0,0,.5);
+    background-color:white;
 }
 
 .catHeading {
-    text-align:center;
+    margin:auto;
     font-family: 'Catamaran', sans-serif;
+    background-color:white;
+    width:300px;
+    text-align:center;
+    border:solid 10px rgb(189, 2, 2);
+    box-sizing:border-box;
+    border-top-right-radius:15px;
+    border-top-left-radius:15px;
+    border-bottom:0px;
 }
 
 .catThumbnail {
@@ -74,6 +83,10 @@ body {
 .catImg {
     height:450px;
     width:500px;
+    background-image:url('royal.jpg');
+    background-repeat:no-repeat;
+    background-position-y:50px;
+    background-position-x:15px;
 }
 
 .randomCatBtn, .descriptionBtn {
