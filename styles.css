@@ -1,0 +1,56 @@
+body {
+    display:flex;
+    justify-content:center;
+}
+
+
+.container {
+    height:100%;
+    width:500px;
+    border:solid 10px red;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+
+}
+
+.catHeading {
+    text-align:center;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.catDescription {
+    padding:0px 25px;
+}
+
+.descriptionHeader {
+        text-align:center;
+        font-family: 'Catamaran', sans-serif;
+    }
+
+.catCanvas {
+    height:450px;
+    width:500px;
+}
+
+.catImg {
+    height:450px;
+    width:500px;
+}
+
+.randomCatBtn, .descriptionBtn {
+    height:50px;
+    font-family: 'Catamaran', sans-serif;
+    font-size:20px;
+    font-weight:bolder;
+    cursor:pointer;
+    border:0px;
+    background-color:rgb(189, 2, 2);
+}
+
+.randomCatBtn:hover, .descriptionBtn:hover {
+    color:white;
+}
+
+
+
