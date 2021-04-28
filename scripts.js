@@ -82,15 +82,13 @@ $breedDescription.addEventListener('click', function(){
     });
 });
 
-
-
+// Click button to reveal details about a specific cat breed
 $descriptionBtn.click(function(){
     
     if($breedDescription.value === 'Description By Breed') {
         alert('Please select a cat breed you wish to learn about.');
         return;
     }
-
 
     // Removing prior elements from a previous search
     $( "p" ).remove();
@@ -102,7 +100,6 @@ $descriptionBtn.click(function(){
 
     // Elements created for Cat description button
     let $newDescriptionHeader = $('<h2></h2>', {class:"descriptionHeader", text:catBreedArray[indexOfCat]});
-    // $newDescriptionHeader.hide().fadeIn();
     let $newThumbnail = $('<img>', {class:"catThumbnail", height:'100px', width:'140px', src: catThumbnailImg[indexOfCat]});
     let $newDescription = $('<p></p>', {text: catBreedDescriptions[indexOfCat], class:'catDescription'});
     let $newTemperament = $('<p></p>', {text:'Temperament: ' + catTemperament[indexOfCat], class:'catTemperament'});
